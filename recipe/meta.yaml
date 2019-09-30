@@ -1,4 +1,4 @@
-{% set version = '4.0' %}
+{% set version = '4.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,22 +10,22 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tesseract_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tesseract/tesseract_{{ version }}.tar.gz
-  sha256: 30267d7f41f5ec4ce163796f4d285703538aaa8eb076c0322179a307f0c84db5
+  sha256: c0754a893352f52db44d47911173e7a64f83217671888f6d34adc1631171eca8
 
 build:
   merge_build_host: True  # [win]
   skip: True  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}sed               # [win]
     - {{posix}}grep              # [win]
@@ -78,9 +78,9 @@ extra:
 # Package: tesseract
 # Type: Package
 # Title: Open Source OCR Engine
-# Version: 4.0
+# Version: 4.1
 # Authors@R: person("Jeroen", "Ooms", role = c("aut", "cre"), email = "jeroen@berkeley.edu", comment = c(ORCID = "0000-0002-4035-0289"))
-# Description: Bindings to 'Tesseract' <https://opensource.google.com/projects/tesseract>:  a powerful optical character recognition (OCR) engine that supports over 100 languages. The engine is highly configurable in order to tune the detection algorithms and obtain the best possible results.
+# Description: Bindings to 'Tesseract' <https://opensource.google.com/projects/tesseract>: a powerful optical character recognition (OCR) engine that supports over 100 languages. The engine is highly configurable in order to tune the detection algorithms and obtain the best possible results.
 # License: Apache License 2.0
 # URL: https://github.com/ropensci/tesseract
 # BugReports: https://github.com/ropensci/tesseract/issues
@@ -93,8 +93,8 @@ extra:
 # VignetteBuilder: knitr
 # Language: en-US
 # NeedsCompilation: yes
-# Packaged: 2018-10-30 17:05:32 UTC; jeroen
+# Packaged: 2019-07-25 20:14:12 UTC; jeroen
 # Author: Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>)
 # Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
 # Repository: CRAN
-# Date/Publication: 2018-11-02 18:10:03 UTC
+# Date/Publication: 2019-07-25 20:50:02 UTC
