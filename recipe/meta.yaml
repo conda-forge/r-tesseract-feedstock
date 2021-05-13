@@ -1,4 +1,4 @@
-{% set version = "4.1" %}
+{% set version = "4.1.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tesseract_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tesseract/tesseract_{{ version }}.tar.gz
-  sha256: c0754a893352f52db44d47911173e7a64f83217671888f6d34adc1631171eca8
+  sha256: 75bf601815feb8bbdde73f5812280004a99aea0f2bf4a6edc4041e7a41f49ebb
 
 build:
   merge_build_host: true  # [win]
   skip: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
