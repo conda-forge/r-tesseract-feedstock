@@ -44,8 +44,8 @@ requirements:
     - r-digest
     - r-pdftools >=1.5
     - r-rappdirs
-    - tesseract >=3.03
-    - leptonica
+    - tesseract >=3.03            # [not win]
+    - leptonica                   # [win]
   run:
     - r-base
     - r-rcpp >=0.12.12
@@ -53,8 +53,7 @@ requirements:
     - r-digest
     - r-pdftools >=1.5
     - r-rappdirs
-    - tesseract >=3.03
-    - leptonica
+    - tesseract >=3.03            # [not win]
 
 test:
   commands:
