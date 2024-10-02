@@ -1,0 +1,22 @@
+From e64b6e04a7d7c7c48738b9eaa802088bc7966c06 Mon Sep 17 00:00:00 2001
+From: Mervin Fansler <mervin.fansler@bric.ku.dk>
+Date: Wed, 2 Oct 2024 13:40:10 +0200
+Subject: [PATCH] add pthread
+
+---
+ src/Makevars.win | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Makevars.win b/src/Makevars.win
+index 0989d95..ef21b64 100644
+--- a/src/Makevars.win
++++ b/src/Makevars.win
+@@ -6,7 +6,7 @@ PKG_LIBS = \
+ 	-L${RWINLIB}/lib \
+ 	-ltesseract -lleptonica \
+ 	-ltiff -lopenjp2 -lwebp -lsharpyuv -ljpeg -lgif -lpng16 -lz \
+-	-lws2_32
++	-lws2_32 -pthread
+ 
+ all: clean winlibs
+
